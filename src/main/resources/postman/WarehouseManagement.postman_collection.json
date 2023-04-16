@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "de12416e-348d-43eb-878a-5e9956b9792e",
+		"name": "WarehouseManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1146344"
+	},
+	"item": [
+		{
+			"name": "All warehouses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/warehouses",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"warehouses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "One warehouse",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/warehouses/000",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"warehouses",
+						"000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add warehouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"011\",\r\n    \"name\": \"München Süd\",\r\n    \"address\": \"Berlinerstr. 1, 10984 München\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/warehouses",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"warehouses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Replace warehouse",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"München Süd2\",\r\n    \"address\": \"Berlinerstr. 1, 10984 München\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/warehouses/011",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"warehouses",
+						"011"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete warehouse",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/warehouses/000",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"warehouses",
+						"000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All bays",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/bays",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"bays"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All bays by warehouse",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/warehouses/001/bays",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"warehouses",
+						"001",
+						"bays"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "One bay by warehouse and row, and shelf, and level",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/warehouses/000/bays/1/1/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"warehouses",
+						"000",
+						"bays",
+						"1",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add bay",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rowNumber\": 13,\r\n    \"shelfNumber\": 1,\r\n    \"levelNumber\": 1,\r\n    \"type\": \"CART\",\r\n    \"holdingPoints\": 8,\r\n    \"occupiedPoints\": 1,\r\n    \"tags\": [\r\n        \"row_2\",\r\n        \"row_2\",\r\n        \"row_3\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/warehouses/000/bays",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"warehouses",
+						"000",
+						"bays"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Replace bay",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rowNumber\": 1,\r\n    \"shelfNumber\": 1,\r\n    \"levelNumber\": 1,\r\n    \"type\": \"CART\",\r\n    \"holdingPoints\": 9,\r\n    \"occupiedPoints\": 0,\r\n    \"tags\": [\r\n        \"row_1\",\r\n        \"shelf_1\",\r\n        \"level_1\",\r\n        \"Geschenk papier\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/warehouses/000/bays",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"warehouses",
+						"000",
+						"bays"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete bay",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/warehouses/001/bays/1/1/4",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"warehouses",
+						"001",
+						"bays",
+						"1",
+						"1",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

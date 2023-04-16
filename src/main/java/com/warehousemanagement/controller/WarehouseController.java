@@ -87,9 +87,27 @@ public class WarehouseController {
     @DeleteMapping("/warehouses/{code}")
     public ResponseEntity<?> deleteWarehouse(@PathVariable @Pattern(regexp = "\\d{3}") String code) {
         Warehouse warehouse = warehouseRepository.findByCode(code);
+        boolean isOccupiedPointsExisting = false;
+        Bay bayWithOccupiedPoints = new Bay();
         if (warehouse != null) {
-            warehouseRepository.delete(warehouse);
-            return ResponseEntity.noContent().build();
+            List<Bay> bays = warehouse.getBays();
+            for (Bay bay : bays
+            ) {
+                int occupiedPoints = bay.getOccupiedPoints();
+                if (occupiedPoints != 0) {
+                    bayWithOccupiedPoints = bay;
+                    isOccupiedPointsExisting = true;
+                    break;
+                }
+            }
+
+            if (!isOccupiedPointsExisting) {
+                warehouseRepository.delete(warehouse);
+                return ResponseEntity.noContent().build();
+            } else {
+                throw new BayNotEmptyException(code, bayWithOccupiedPoints.getRowNumber(), bayWithOccupiedPoints.getShelfNumber(), bayWithOccupiedPoints.getLevelNumber());
+            }
+
         } else {
             throw new WarehouseNotFoundException(code);
         }

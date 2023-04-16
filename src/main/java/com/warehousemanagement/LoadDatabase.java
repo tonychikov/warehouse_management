@@ -46,7 +46,7 @@ public class LoadDatabase {
             for (int row = 1; row <= 3; row++) {
                 for (int shelf = 1; shelf <= 4; shelf++) {
                     for (int level = 1; level <= 5; level++) {
-                        Bay bay = new Bay(potsdamWarehouse, row, shelf, level, BayType.PALLET, 4, 0,
+                        Bay bay = new Bay(potsdamWarehouse, row, shelf, level, BayType.PALLET, 4, 1,
                                 Arrays.asList("row_" + row, "shelf_" + shelf, "level" + level));
                         bayRepository.save(bay);
                         log.info("Preloaded " + bay);
@@ -57,7 +57,7 @@ public class LoadDatabase {
             for (int row = 1; row <= 2; row++) {
                 for (int shelf = 1; shelf <= 4; shelf++) {
                     for (int level = 1; level <= 5; level++) {
-                        Bay bay = new Bay(berlinSchoenefeldWarehouse, row, shelf, level, BayType.CART, 9, 0,
+                        Bay bay = new Bay(berlinSchoenefeldWarehouse, row, shelf, level, BayType.CART, 9, 9,
                                 Arrays.asList("Row_" + row, "Shelf_" + shelf, "Level_" + level));
                         bayRepository.save(bay);
                         log.info("Preloaded " + bay);
