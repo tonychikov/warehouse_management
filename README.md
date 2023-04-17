@@ -48,14 +48,14 @@ mvn clean spring-boot:run
 # or
 ./mvnw clean spring-boot:run
 ```
-The system creates 3 demo warehouse and many bays allocated to them with different settings.
+The system creates 3 demo warehouses and many bays allocated to them with different settings.
 
 ### Sample commands
 
 I recommend using Postman to look at the API. The Postman collection is imported and attached to the project.
-Just import the collection in your postman account. https://learning.postman.com/docs/getting-started/importing-and-exporting-data/
+Just import the collection in your Postman account. https://learning.postman.com/docs/getting-started/importing-and-exporting-data/
 
-There are  simple curl command below. Since I use Windows to develop the solution, all quotes are escaped by backslash
+There are  simple Curl command below. Since I use Windows to develop the solution, all quotes are escaped by backslash
 
 #### List of warehouses
 The command just shows the list of all warehouses
