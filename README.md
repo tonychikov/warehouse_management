@@ -45,7 +45,7 @@ Feel free to upload the solution to github or gitlab, or to send it as a zip fil
 ### How to start the application
 ``` bash
 mvn clean spring-boot:run
-or
+# or
 ./mvnw clean spring-boot:run
 ```
 The system creates 3 demo warehouse and many bays allocated to them with different settings.
