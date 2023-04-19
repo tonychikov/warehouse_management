@@ -2,7 +2,7 @@
 
 ### Task
 
-At krieger we manage the company’s warehouses.
+We manage the company’s warehouses.
 Each warehouse is identified by a unique 3-digit code, name and address.
 Inside a warehouse we have the bays, where the goods are stored. Bays are organized on rows
 like:
